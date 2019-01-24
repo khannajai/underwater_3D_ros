@@ -1,0 +1,8 @@
+prefix=/home/jai/catkin_ws/install
+
+Name: feature_pub
+Description: Description of feature_pub
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/jai/catkin_ws/install/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/jai/catkin_ws/devel
+
+Name: image_converter
+Description: Description of image_converter
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/jai/catkin_ws/devel/lib 
+Requires: 
