@@ -1,0 +1,53 @@
+# Follow the specified path, which may include both depth-mode and bottom
+# following altitude-mode sections.
+
+# Variable length array of vehicle trajectory poses.
+VehiclePose[] pose
+
+# Boolean array the same length as pose, where true indicates
+# that altitude mode control should preferably be used when sending
+# that pose as a waypoint to the pilot, with the altitude specified in the
+# request parameters.
+bool[] altitude_mode
+
+#ID Intervention
+
+string id_intervention   
+
+---
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_OBJECT_NOT_FOUND=2
+int32 ERROR_DETECTION=3
+int32 ERROR_TRACKING=4
+int32 ERROR_UNREACHABLE=5
+int32 ERROR_SPEC_NOT_FOUND=6
+int32 ERROR_OTHER=-1
+
+string error_string
+
+---
+
+Header header
+
+# Action progress
+
+string state
+
+uint32 num_waypoints
+
+uint32 num_waypoints_completed
+
+float32 intervention_percent_complete
+
+std_msgs/Duration intervention_est_time_left
+
+int32 step
+int32 STEP_REACHING=1
+int32 STEP_GRASPING=2
+int32 STEP_TASK=3
+int32 STEP_OTHER=-1

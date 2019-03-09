@@ -1,0 +1,33 @@
+
+(cl:in-package :asdf)
+
+(defsystem "vehicle_msgs-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :diagnostic_msgs-msg
+               :std_msgs-msg
+)
+  :components ((:file "_package")
+    (:file "NodeStatus" :depends-on ("_package_NodeStatus"))
+    (:file "_package_NodeStatus" :depends-on ("_package"))
+    (:file "FloatArray" :depends-on ("_package_FloatArray"))
+    (:file "_package_FloatArray" :depends-on ("_package"))
+    (:file "Vector6" :depends-on ("_package_Vector6"))
+    (:file "_package_Vector6" :depends-on ("_package"))
+    (:file "VehicleStatus" :depends-on ("_package_VehicleStatus"))
+    (:file "_package_VehicleStatus" :depends-on ("_package"))
+    (:file "ThrusterCommand" :depends-on ("_package_ThrusterCommand"))
+    (:file "_package_ThrusterCommand" :depends-on ("_package"))
+    (:file "Vector6Stamped" :depends-on ("_package_Vector6Stamped"))
+    (:file "_package_Vector6Stamped" :depends-on ("_package"))
+    (:file "FloatArrayStamped" :depends-on ("_package_FloatArrayStamped"))
+    (:file "_package_FloatArrayStamped" :depends-on ("_package"))
+    (:file "PathStatus" :depends-on ("_package_PathStatus"))
+    (:file "_package_PathStatus" :depends-on ("_package"))
+    (:file "Dictionary" :depends-on ("_package_Dictionary"))
+    (:file "_package_Dictionary" :depends-on ("_package"))
+    (:file "PilotRequest" :depends-on ("_package_PilotRequest"))
+    (:file "_package_PilotRequest" :depends-on ("_package"))
+    (:file "ThrusterFeedback" :depends-on ("_package_ThrusterFeedback"))
+    (:file "_package_ThrusterFeedback" :depends-on ("_package"))
+    (:file "PilotStatus" :depends-on ("_package_PilotStatus"))
+    (:file "_package_PilotStatus" :depends-on ("_package"))
+  ))

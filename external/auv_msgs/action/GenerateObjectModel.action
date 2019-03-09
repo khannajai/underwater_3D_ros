@@ -1,0 +1,18 @@
+# Generates a model of an object described by a polygon in a 2D image.
+
+# Frame of the camera that captured the image (may be virtual)
+string camera_frame
+
+# Timestamp of the image
+time stamp
+
+# Polygon surrounding the object in image pixel coordinates (z=0)
+geometry_msgs/Polygon polygon
+
+---
+
+ObjectModel model
+
+---
+
+float32 percent_complete

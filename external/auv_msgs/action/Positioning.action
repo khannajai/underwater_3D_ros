@@ -1,0 +1,26 @@
+# Position a marine vehicle at a given pose.
+
+# Variable to specify final pose.
+VehiclePose pose
+float64 minimum_duration
+int32 maximum_duration
+
+# Boolean variable to support the above vehicle pose. True indicates
+# that altitude mode control should preferably be used when sending
+# that pose as a waypoint to the pilot, with the altitude specified in the
+# request parameters.
+bool altitude_mode   
+
+---
+
+bool success
+string pddl_name
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_OTHER=-1
+
+string error_string
+
+---
+string completed_action_name

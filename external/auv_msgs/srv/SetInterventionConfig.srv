@@ -1,0 +1,19 @@
+# This service is used to provide an intervention specification.
+# The specification will then be referenced in subsequent
+# PerformInterventionStrategy actions.
+
+InterventionSpec spec
+
+---
+
+bool ok
+
+# Set if not ok
+int32 error_num
+int32 ERROR_BAD_PARAM = 1
+int32 ERROR_SERVICE_RUNNING = 2
+int32 ERROR_OTHER = -1
+
+# Set to param name on ERROR_BAD_PARAM or error text on 
+# ERROR_OTHER
+string error_string

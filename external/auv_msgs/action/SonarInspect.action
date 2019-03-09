@@ -1,0 +1,18 @@
+# Variable to specify final pose.
+VehiclePose pose
+time minimum_duration
+
+---
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_OTHER=-1
+
+string error_string
+
+---
+
+

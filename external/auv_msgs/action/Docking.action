@@ -1,0 +1,20 @@
+# Homing which can be with a simulation beacon or using USBL
+
+# If we specifiy in ROS parameters fakebeacon, we will take the position from here instead of USBL
+
+NED beacon
+
+---
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_OTHER=-1
+
+string error_string
+
+---
+
+uint32 current_distance

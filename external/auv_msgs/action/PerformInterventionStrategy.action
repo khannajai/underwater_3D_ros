@@ -1,0 +1,36 @@
+# This action requests that a specific intervention strategy be attempted,
+# specified by unique reference to an InterventionSpec, and task and
+# strategy indices within that spec.
+
+string intervention_spec_id
+uint32 task_index
+uint32 strategy_index
+
+---
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_DETECTION=1
+int32 ERROR_TRACKING=2
+int32 ERROR_UNREACHABLE=3
+int32 ERROR_SPEC_NOT_FOUND=4
+int32 ERROR_OTHER=-1
+
+string error_string
+
+---
+
+Header header
+
+# Action progress
+float32 percent_complete
+
+std_msgs/Duration est_time_left
+
+int32 step
+int32 STEP_REACHING=1
+int32 STEP_GRASPING=2
+int32 STEP_TASK=3
+int32 STEP_OTHER=-1

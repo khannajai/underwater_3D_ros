@@ -1,0 +1,15 @@
+<package>
+  <description brief="nessie_msgs">
+
+     nessie_msgs
+
+  </description>
+  <author>Josep Bosch</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/nessie_msgs</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

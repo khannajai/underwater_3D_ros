@@ -1,0 +1,7 @@
+# inpection points are generated within this volume
+
+string octomap_id 
+SphereArray inspection_volume
+---
+
+NEDArray ips

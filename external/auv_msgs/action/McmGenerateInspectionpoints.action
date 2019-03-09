@@ -1,0 +1,18 @@
+#the pddl name to store the result in, WP maps to WP1, WP2 .. WPn
+string ip_variable_prefix
+---
+
+#total waypoints suggested
+VehiclePoseArray inspectionpoints
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_OTHER=-1
+string error_string
+
+---
+string completed_action_name
+

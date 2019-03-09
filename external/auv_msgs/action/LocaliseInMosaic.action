@@ -1,0 +1,41 @@
+# Attempt to discover the vehicle's pose within the specified large mosaic image.
+#
+# May need to be performed with vehicle stationary due to computation time.
+# May be useful to provide constraints on odometry whilst localising, e.g. at least 
+# estimate visual motion every second, to speed up localisation calculations. 
+# Could slow/stop vehicle during this process. Potential to specify pose 
+# radius/covariance cutoff probability for mosaic localisation action.
+
+# ID of the image to localise within. 
+string view_image_id
+
+# Features to use for localisation, specified in image frame.
+ImageFeature view_feature
+
+# Frame of the suggested camera to use.
+string camera_frame
+
+---
+
+# Number of frames processed.
+uint32 frame_count
+
+# Number of frames where the view was localised in the mosaic.
+uint32 identified_frame_count
+
+---
+
+# Image ID repeated from request
+string view_image_id
+
+# Frame of the camera used to localise.
+string camera_frame
+
+# Timestamp of the camera image used.
+time stamp
+
+# True if view is identified.
+bool identified
+
+# Pose is specified in view image frame.
+geometry_msgs/PoseWithCovariance vehicle_relative_to_view

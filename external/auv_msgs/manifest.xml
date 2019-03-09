@@ -1,0 +1,19 @@
+<package>
+  <description brief="auv_msgs">
+
+     auv_msgs
+
+  </description>
+  <author>Joel Cartwright</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>TODO</url>
+<!--  <depend package="actionlib_msgs"/> -->
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="actionlib_msgs"/>
+
+</package>
+
+

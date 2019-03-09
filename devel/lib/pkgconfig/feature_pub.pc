@@ -1,8 +1,0 @@
-prefix=/home/jai/catkin_ws/devel
-
-Name: feature_pub
-Description: Description of feature_pub
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/jai/catkin_ws/devel/lib 
-Requires: 

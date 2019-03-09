@@ -121,8 +121,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jai/catkin_ws/build/gtest/cmake_install.cmake")
-  include("/home/jai/catkin_ws/build/image_converter/cmake_install.cmake")
+  include("/home/jai/catkin_ws/build/cartesian_transform/cmake_install.cmake")
 
 endif()
 

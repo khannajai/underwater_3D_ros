@@ -1,0 +1,9 @@
+# Continually reports the video sensing quality.
+
+---
+
+---
+
+float64 contrast
+
+float64 blur

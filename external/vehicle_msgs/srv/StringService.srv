@@ -1,0 +1,8 @@
+# vehicle_msgs/StringService.srv
+#   basic service type for string request/response services
+
+string request
+---
+
+bool result
+string response

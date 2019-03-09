@@ -1,0 +1,28 @@
+# Follow the lead vehicle, with optional path specification of
+# the lead vehicle.
+
+# True if the expected path of the leader is provided.
+bool path_provided
+
+# Variable length array of lead vehicle trajectory poses.
+VehiclePose[] pose 
+
+# TODO Lead vehicle identifier needed?
+
+---
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_LOST_LEADER=2
+int32 ERROR_OTHER=-1
+
+string error_string
+
+---
+
+uint32 num_waypoints
+
+uint32 num_waypoints_completed

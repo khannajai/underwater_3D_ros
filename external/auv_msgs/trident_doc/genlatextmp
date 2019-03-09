@@ -1,0 +1,172 @@
+#!/bin/bash
+
+set -e
+
+tac_cmd=`which tac | cat`
+if [ "$tac_cmd" = "" ]; then
+	echo "You need to install 'tac'. Under Ubuntu:"
+	echo "\$ sudo apt-get install tac"
+	exit 1
+fi
+
+strip_start_white_lines()
+{
+	awk 'BEGIN { started=0; }; /^^[ \t]*$/ { if (started) print $0; }; !/^[ \t]*$/ { started=1; print $0; };'
+}
+
+strip_end_white_lines()
+{
+	$tac_cmd | strip_start_white_lines | $tac_cmd
+}
+
+strip_start_end_white_lines()
+{
+	strip_start_white_lines | strip_end_white_lines
+}
+
+has_notes()
+{
+	f=$1
+
+	# Define the notes section at the top of an interface definition to be one or
+	# more lines beginning with hash, followed by a line of whitespace only.
+	# If a file does not have a whitespace line after the comment (hash) lines, 
+	# that is assumed to be a comment for the following field, not a notes
+	# section.
+
+	awk 'BEGIN { hash=0; }; { if ($0 ~ /^#.*$/) { hash=1 } else if (hash && $0 ~ /^[ \t]*$/) { exit(0) } else { exit(1) } }' "$f"
+	return $?
+}
+
+pick_notes()
+{
+	f="$1"
+	
+	has_notes "$f" && \
+	awk '{ if ($0 ~ /^#.*$/) { print $0; } else exit(0); }' "$f" | sed 's/^# //;s/^#//;' | strip_start_end_white_lines
+	
+	return 0
+}
+
+pick_section()
+{
+	f="$1"
+	sec="$2"
+	no_notes="$3"
+
+	if has_notes "$f" && [ -z "$no_notes" ]; then	
+		awk "BEGIN { count = 0; }; { if (\$0 !~ /^#.*\$/ && count == 0) { count = 1 }; }; /---/ { count++; }; !/---/ { if 	(count == $sec) print \$0; };" \
+			"$f" | strip_start_end_white_lines
+	else
+		awk "BEGIN { count = 1; }; /---/ { count++; }; !/---/ { if 	(count == $sec) print \$0; };" \
+			"$f" | strip_start_end_white_lines
+	fi
+	
+	return 0
+}
+
+script_dir=`dirname $0`
+if [ "$script_dir" = "." ]; then
+  script_dir=`pwd`
+fi
+
+this_pkg_tex='auv\_msgs'
+top_dir=`dirname "$script_dir"`
+msg_dir="${top_dir}/msg"
+service_dir="${top_dir}/srv"
+action_dir="${top_dir}/action"
+doc_dir="$script_dir"
+tmp_msg_dir="${doc_dir}/tmp_msg"
+
+[ ! -d "$tmp_msg_dir" ] && mkdir -p "$tmp_msg_dir"
+
+rm -f ${tmp_msg_dir}/*.txt
+
+for ext_pkg in geometry_msgs sensor_msgs nav_msgs; do
+ext_dir=`rospack find $ext_pkg`/msg
+cd $ext_dir
+ext_pkg_tex=`echo "$ext_pkg" | sed 's#_#\\\\_#g'`
+echo "Ext dir: `pwd`"
+for f in `ls *.msg | egrep -v '(Action|Feedback|Goal|Result).msg$'`; do
+  out_prefix=`basename "$f" ".msg"`
+  echo "" > "${tmp_msg_dir}/${out_prefix}_Notes.tex"
+  pick_section "$f" 1 > "${tmp_msg_dir}/${out_prefix}_Body.txt" no_notes
+cat > "${tmp_msg_dir}/${out_prefix}.tex" <<EOF
+\subsection{Message: ${ext_pkg_tex}/${out_prefix}}
+\begin{tabular}{p{1.75cm}p{15cm}}
+Notes &
+\input{${tmp_msg_dir}/${out_prefix}_Notes.tex} \\\\
+\hline
+Body & \vspace{-12pt} {\footnotesize \verbatiminput{${tmp_msg_dir}/${out_prefix}_Body.txt}} \vspace{-16pt} \\\\
+\hline
+\end{tabular}
+EOF
+done
+done
+
+cd "$msg_dir"
+for f in `ls *.msg | egrep -v '(Action|Feedback|Goal|Result).msg$'`; do
+  out_prefix=`basename "$f" ".msg"`
+  pick_notes "$f" > "${tmp_msg_dir}/${out_prefix}_Notes.tex"
+  pick_section "$f" 1 > "${tmp_msg_dir}/${out_prefix}_Body.txt"
+cat > "${tmp_msg_dir}/${out_prefix}.tex" <<EOF
+\subsection{Message: ${this_pkg_tex}/${out_prefix}}
+\begin{tabular}{p{1.75cm}p{15cm}}
+Notes &
+\input{${tmp_msg_dir}/${out_prefix}_Notes.tex} \\\\
+\hline
+Body & \vspace{-12pt} {\footnotesize \verbatiminput{${tmp_msg_dir}/${out_prefix}_Body.txt}} \vspace{-16pt} \\\\
+\hline
+\end{tabular}
+EOF
+done
+
+cd "$service_dir"
+for f in *.srv ; do
+  out_prefix=`basename "$f" ".srv"`
+  pick_notes "$f" > "${tmp_msg_dir}/${out_prefix}_Notes.tex"
+  pick_section "$f" 1 > "${tmp_msg_dir}/${out_prefix}_Request.txt"
+  pick_section "$f" 2 > "${tmp_msg_dir}/${out_prefix}_Response.txt"  
+cat > "${tmp_msg_dir}/${out_prefix}.tex" <<EOF
+\subsection{Service: ${this_pkg_tex}/${out_prefix}}
+\begin{tabular}{p{1.75cm}p{15cm}}
+Notes &
+\input{${tmp_msg_dir}/${out_prefix}_Notes.tex} \\\\
+\hline
+Request & \vspace{-12pt} {\footnotesize \verbatiminput{${tmp_msg_dir}/${out_prefix}_Request.txt}} \vspace{-16pt} \\\\
+\hline
+Response & \vspace{-12pt} {\footnotesize \verbatiminput{${tmp_msg_dir}/${out_prefix}_Response.txt}} \vspace{-16pt} \\\\
+\hline
+\end{tabular}
+EOF
+done
+
+cd "$action_dir"
+for f in *.action ; do
+  out_prefix=`basename "$f" ".action"`
+  pick_notes "$f" > "${tmp_msg_dir}/${out_prefix}_Notes.tex"
+  pick_section "$f" 1 > "${tmp_msg_dir}/${out_prefix}_Goal.txt"
+  pick_section "$f" 2 > "${tmp_msg_dir}/${out_prefix}_Result.txt"
+  pick_section "$f" 3 > "${tmp_msg_dir}/${out_prefix}_Feedback.txt"  
+cat > "${tmp_msg_dir}/${out_prefix}.tex" <<EOF
+\subsection{Action: ${this_pkg_tex}/${out_prefix}}
+\begin{tabular}{p{1.75cm}p{15cm}}
+Notes &
+\input{${tmp_msg_dir}/${out_prefix}_Notes.tex} \vspace{4pt} \\\\
+\hline
+Parameters & 
+\vspace{-12pt} {\footnotesize \verbatiminput{${tmp_msg_dir}/${out_prefix}_Goal.txt}} \vspace{-16pt} \\\\
+\hline
+Result & 
+\vspace{-12pt} {\footnotesize \verbatiminput{${tmp_msg_dir}/${out_prefix}_Result.txt}} \vspace{-16pt} \\\\
+\hline
+Feedback & 
+\vspace{-12pt} {\footnotesize \verbatiminput{${tmp_msg_dir}/${out_prefix}_Feedback.txt}} \vspace{-16pt} \\\\
+\hline
+\end{tabular}
+EOF
+done
+
+echo "`basename $0`: completed"
+
+exit 0

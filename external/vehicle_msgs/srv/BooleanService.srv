@@ -1,0 +1,6 @@
+# vehicle_msgs/BooleanService.srv
+#   basic service type for boolean request/response services
+
+bool request
+---
+bool response

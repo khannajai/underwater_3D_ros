@@ -1,0 +1,16 @@
+<package>
+  <description brief="vehicle_msgs">
+
+     vehicle_msgs
+
+  </description>
+  <author>decabyte</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/vehicle_msgs</url>
+  <depend package="diagnostic_msgs"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+

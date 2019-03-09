@@ -1,0 +1,30 @@
+# If true, plan in depth mode, otherwise plan in bottom-following altitude
+# mode.
+bool depth_mode
+
+float32 altitude    # altitude when depth_mode is false
+float32 depth    # depth when depth_mode is true
+
+float32 start_north
+float32 start_east
+float32 end_north
+float32 end_east
+float32 max_bottom_gradient
+
+# TODO: Need to specify search area bounds instead of start-end?
+
+---
+
+bool success
+int32 error_num
+int32 ERROR_MISSING_BATHYMETRY = 1
+int32 ERROR_OTHER = -1
+
+# Variable length array of vehicle trajectory poses.
+VehiclePose[] pose
+
+# Boolean array the same length as trajectory_pose, where true indicates
+# that altitude mode control should preferably be used when sending
+# that pose as a waypoint to the pilot, with the altitude specified in the
+# request parameters.
+bool[] altitude_mode   

@@ -1,0 +1,28 @@
+# Follow the specified path, which may include both depth-mode and bottom
+# following altitude-mode sections.
+
+# Variable length array of vehicle trajectory poses.
+VehiclePose[] pose
+
+# Boolean array the same length as pose, where true indicates
+# that altitude mode control should preferably be used when sending
+# that pose as a waypoint to the pilot, with the altitude specified in the
+# request parameters.
+bool[] altitude_mode   
+
+---
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_OTHER=-1
+
+string error_string
+
+---
+
+uint32 num_waypoints
+
+uint32 num_waypoints_completed

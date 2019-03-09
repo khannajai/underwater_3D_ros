@@ -1,0 +1,8 @@
+# vehicle_msgs/FloatService.srv
+#   basic service type for float array request/response services
+
+float32[] request
+---
+
+bool result
+float32[] response

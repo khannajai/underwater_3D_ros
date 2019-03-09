@@ -1,0 +1,65 @@
+\title{TRIDENT Project Interfaces\\Partner: HWU}
+\author{
+        Joel Cartwright \\
+        Heriot-Watt University, Scotland, UK \\
+        Version: \input{../version} \\
+}
+\date{\today}
+
+\documentclass[10pt]{article}
+
+\usepackage{verbatim}
+\usepackage[hmargin=2cm,vmargin=2cm]{geometry}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Vehicle navigation and basic control}
+
+\input{tmp_msg/Odometry}
+\input{tmp_msg/Transform}
+\input{tmp_msg/TransformStamped}
+\input{tmp_msg/Wrench}
+\input{tmp_msg/Twist}
+\input{tmp_msg/NED}
+\input{tmp_msg/RPY}
+\input{tmp_msg/NavSts}
+\input{tmp_msg/Bool6Axis}
+\input{tmp_msg/GoalDescriptor}
+\input{tmp_msg/WaypointSts}
+\input{tmp_msg/WorldWaypointReq}
+
+\section{Vehicle control behaviours}
+
+\input{tmp_msg/VehiclePose}
+\input{tmp_msg/PlanVehicleSearchPath}
+\input{tmp_msg/FollowLeaderWithPath}
+\input{tmp_msg/FollowTerrainWithPath}
+\input{tmp_msg/EnterDock}
+\input{tmp_msg/LeaveDock}
+
+\section{Vision}
+
+\input{tmp_msg/ImageFeature}
+\input{tmp_msg/ObjectModel}
+\input{tmp_msg/VideoSensingQuality}
+\input{tmp_msg/VisualMotion}
+\input{tmp_msg/GenerateObjectModel}
+\input{tmp_msg/LocaliseInMosaic}
+\input{tmp_msg/IdentifyObject}
+
+\section{Manipulation}
+
+\input{tmp_msg/SetInterventionConfig}
+\input{tmp_msg/InterventionSpec}
+\input{tmp_msg/InterventionStrategySpec}
+\input{tmp_msg/InterventionTaskSpec}
+\input{tmp_msg/PerformInterventionStrategy}
+
+\section{Communication}
+
+\input{tmp_msg/AcousticModemData}
+
+\end{document}

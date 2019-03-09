@@ -1,0 +1,14 @@
+# vehicle_msgs/PathService.srv
+#   service type for path planner operations
+
+Header header                           # stamp the message
+string command                          # select the
+
+vehicle_msgs/FloatArray[] points        # list of waypoints (ie. control point for navigation)
+diagnostic_msgs/KeyValue[] options      # list of options (ie. additional parameters for navigation algorithms)
+
+---------
+
+bool result                             # the result of the service request (if false check info for errors)
+string state                            # the current state of the path navigation
+diagnostic_msgs/KeyValue[] info         # list of additional info about the service request

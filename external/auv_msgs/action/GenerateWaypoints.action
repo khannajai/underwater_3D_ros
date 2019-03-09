@@ -1,0 +1,24 @@
+#areas of observed occupancy that we want to inspect around
+SphereArray occupancy
+#the pddl name to store the result in, WP maps to WP1, WP2 .. WPn
+string wp_variable_prefix
+string ip_variable_prefix
+---
+
+#total waypoints suggested
+VehiclePoseArray waypoints
+NEDArray inspectionpoints
+
+bool success
+
+# Error number if action failed.
+int32 error_num
+int32 ERROR_LOST_NAV=1
+int32 ERROR_OTHER=-1
+string error_string
+
+---
+#no feedback (pointless coz this action is fast)
+
+
+

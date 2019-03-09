@@ -1,0 +1,8 @@
+# vehicle_msgs/DictionaryService.srv
+#   basic service type for Dictionary request/response services
+
+diagnostic_msgs/KeyValue[] request
+---
+
+bool result
+diagnostic_msgs/KeyValue[] response

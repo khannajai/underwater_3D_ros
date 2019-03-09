@@ -1,0 +1,46 @@
+\title{TRIDENT Project Interfaces\\Partner: IST}
+\author{
+        Joel Cartwright \\
+        Heriot-Watt University, Scotland, UK \\
+        Version: \input{../version} \\
+}
+\date{\today}
+
+\documentclass[10pt]{article}
+
+\usepackage{verbatim}
+\usepackage[hmargin=2cm,vmargin=2cm]{geometry}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Vehicle navigation and basic control}
+
+\input{tmp_msg/Odometry}
+\input{tmp_msg/Transform}
+\input{tmp_msg/TransformStamped}
+\input{tmp_msg/NED}
+\input{tmp_msg/RPY}
+\input{tmp_msg/DecimalLatLon}
+\input{tmp_msg/NavSts}
+\input{tmp_msg/Bool6Axis}
+\input{tmp_msg/GoalDescriptor}
+\input{tmp_msg/WaypointSts}
+\input{tmp_msg/BodyVelocityReq}
+
+\section{Vehicle control behaviours}
+
+\input{tmp_msg/VehiclePose}
+\input{tmp_msg/FollowLeaderWithPath}
+\input{tmp_msg/FollowTerrainWithPath}
+\input{tmp_msg/EnterDock}
+\input{tmp_msg/LeaveDock}
+\input{tmp_msg/Positioning}
+
+\section{Communication}
+
+\input{tmp_msg/AcousticModemData}
+
+\end{document}
