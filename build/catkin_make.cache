@@ -1,2 +1,0 @@
-cartesian_transform
--DCATKIN_DEVEL_PREFIX=/home/jai/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jai/catkin_ws/install -G Unix Makefiles

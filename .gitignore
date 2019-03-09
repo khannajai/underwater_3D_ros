@@ -1,7 +1,4 @@
-.vscode
 *.jpg
-build
-devel
 *.pyc
 venv
 *.auth
