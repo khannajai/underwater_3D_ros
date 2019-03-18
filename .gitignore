@@ -13,5 +13,3 @@ etc
 *.json
 *.pickle
 *.list
-build
-devel

@@ -1,8 +1,0 @@
-prefix=/home/jai/catkin_ws/devel
-
-Name: cartesian_transform
-Description: Description of cartesian_transform
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/jai/catkin_ws/devel/lib 
-Requires: 
