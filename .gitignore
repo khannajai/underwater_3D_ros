@@ -3,7 +3,6 @@
 venv
 *.auth
 conf
-*rc
 manifest
 dist/
 .pytest_cache/

@@ -4,9 +4,10 @@
 
 ROS Melodic Full, OpenCV 4.0.1, imagemagick
 
-## Create catkin workspace for ROS
+## Create catkin workspace
 Make and source the catkin workspace
 ```
+$ catkin_make
 $ source devel/setup.zsh
 or
 $ source devel/setup.bash
@@ -27,5 +28,3 @@ Convert and publish image
 ```
 $ rosrun cartesian_transform image_converter node
 ```
-
-## Run in Docker
