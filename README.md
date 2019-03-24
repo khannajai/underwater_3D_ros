@@ -1,15 +1,27 @@
 # ROS Catkin workspace for Underwater 3D Reconstruction from acoustic images
 
-## Install dependencies for Ubuntu
+## Install dependencies
+### On Ubuntu
+ROS Melodic Full
+```
+$ sudo apt install ros-melodic-desktop-full
+```
 
-ROS Melodic Full, OpenCV 4.0.1, imagemagick
+[OpenCV 4.0.1](https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/#disqus_thread)
+
+ImageMagick
+```
+$ sudo apt install imagemagick
+```
 
 ## Create catkin workspace
 Make and source the catkin workspace
 ```
 $ catkin_make
 $ source devel/setup.zsh
+```
 or
+```
 $ source devel/setup.bash
 ```
 Add external packages to `ROS_PACKAGE_PATH`
