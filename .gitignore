@@ -16,3 +16,4 @@ etc
 build
 devel
 .vscode
+*.bag
