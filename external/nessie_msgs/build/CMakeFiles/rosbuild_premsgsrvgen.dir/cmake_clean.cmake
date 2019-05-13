@@ -1,11 +1,10 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "../msg_gen"
   "../msg_gen"
   "../src/nessie_msgs/msg"
-  "CMakeFiles/rosbuild_premsgsrvgen"
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/rosbuild_premsgsrvgen.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang )
+  include(CMakeFiles/rosbuild_premsgsrvgen.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

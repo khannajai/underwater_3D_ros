@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="underwater_reconstruction" type="blob_detector.py" name="blob_detector"/>
+  <param name="use_sim_time" value="1"/> 
+</launch>

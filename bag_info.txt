@@ -1,0 +1,95 @@
+path:        day5_1_2014-10-10-09-44-24.bag
+version:     2.0
+duration:    41:13s (2473s)
+start:       Oct 10 2014 10:44:25.44 (1412930665.44)
+end:         Oct 10 2014 11:25:39.41 (1412933139.41)
+size:        10.5 GB
+messages:    488934
+compression: none [10342/10342 chunks]
+types:       auv_msgs/NavSts                       [4ce9d43f0d458ab76be6de8266700753]
+             auv_msgs/bvtSonarOutputParam          [4f2a1f53c97861b311eb9f47531f437f]
+             blueview_pantilt/PanTiltOrientation   [d45bdfd129c607984e3557e34ac222df]
+             diagnostic_msgs/DiagnosticArray       [3cfbeff055e708a24c3d946a5c8139cd]
+             dynamic_reconfigure/Config            [958f16a05573709014982821e6822580]
+             dynamic_reconfigure/ConfigDescription [757ce9d44ba8ddd801bb30bc456f946f]
+             energy_monitor/EnergyGlobal           [e503a556e812802a57223412afd805ab]
+             geometry_msgs/PoseStamped             [d3812c3cbc69362b77dc0b19b345f8f5]
+             nav_msgs/Odometry                     [cd5e73d190d741a2f92e81eda573aca7]
+             nessie_msgs/TeledyneExplDvl           [055077ee78c1cdff00a67f26328530ba]
+             platform_monitor/VehicleStatus        [cf485e545d0283bfcab3f5fcd6a28653]
+             rosgraph_msgs/Log                     [acffd30cd6b6de30f120938c17c593fb]
+             sensor_msgs/CompressedImage           [8f7a12909da2c9d3332d540a0977563f]
+             sensor_msgs/Image                     [060021388200f6f0f447d0fcd9c64743]
+             sensor_msgs/Imu                       [6a62c6daae103f4ff57a132d6f95cec2]
+             sensor_msgs/JointState                [3066dcd76a6cfaef579bd0f34173e9fd]
+             sensor_msgs/Joy                       [5a9ea5f83505693b71e785041e67a8bb]
+             sensor_msgs/NavSatFix                 [2d3a8cd499b9b4a0249fb98fd05cfa48]
+             tf/tfMessage                          [94810edda583a504dfda3829e70d7eec]
+             theora_image_transport/Packet         [33ac4e14a7cff32e7e0d65f18bb410f3]
+             vehicle_msgs/FloatArrayStamped        [ca27dea75e72cb894cd36f9e5005e93e]
+             vehicle_msgs/PilotRequest             [1a6a82401ad4d01a163d834e114bb63f]
+             vehicle_msgs/PilotStatus              [95e902a78691918b0940fdc05c04242c]
+             vehicle_msgs/ThrusterCommand          [64cfaf25518edc711f9e398f2530a33f]
+             vehicle_msgs/ThrusterFeedback         [da991891c14c1b46b11dd3c98f7b9179]
+topics:      /bvt_MB2250/RT/image                                           3247 msgs    : sensor_msgs/Image                    
+             /bvt_MB2250/RT/image/compressed                                3247 msgs    : sensor_msgs/CompressedImage          
+             /bvt_MB2250/RT/image/compressed/parameter_descriptions            9 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_MB2250/RT/image/compressed/parameter_updates                13 msgs    : dynamic_reconfigure/Config           
+             /bvt_MB2250/RT/image/compressedDepth                           3250 msgs    : sensor_msgs/CompressedImage          
+             /bvt_MB2250/RT/image/compressedDepth/parameter_descriptions       9 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_MB2250/RT/image/compressedDepth/parameter_updates           10 msgs    : dynamic_reconfigure/Config           
+             /bvt_MB2250/RT/image/theora                                    3303 msgs    : theora_image_transport/Packet        
+             /bvt_MB2250/RT/image/theora/parameter_descriptions                9 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_MB2250/RT/image/theora/parameter_updates                    12 msgs    : dynamic_reconfigure/Config           
+             /bvt_MB2250/RT/parameter                                       3248 msgs    : auv_msgs/bvtSonarOutputParam         
+             /bvt_MB2250/XY/image/compressed/parameter_descriptions            9 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_MB2250/XY/image/compressed/parameter_updates                11 msgs    : dynamic_reconfigure/Config           
+             /bvt_MB2250/XY/image/compressedDepth/parameter_descriptions       9 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_MB2250/XY/image/compressedDepth/parameter_updates           11 msgs    : dynamic_reconfigure/Config           
+             /bvt_MB2250/XY/image/theora/parameter_descriptions                9 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_MB2250/XY/image/theora/parameter_updates                    11 msgs    : dynamic_reconfigure/Config           
+             /bvt_MB2250/parameter_descriptions                                9 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_MB2250/parameter_updates                                    16 msgs    : dynamic_reconfigure/Config           
+             /bvt_P900/RT/image                                             5531 msgs    : sensor_msgs/Image                    
+             /bvt_P900/RT/image/compressed                                  5525 msgs    : sensor_msgs/CompressedImage          
+             /bvt_P900/RT/image/compressed/parameter_descriptions              7 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_P900/RT/image/compressed/parameter_updates                   8 msgs    : dynamic_reconfigure/Config           
+             /bvt_P900/RT/image/compressedDepth                             5535 msgs    : sensor_msgs/CompressedImage          
+             /bvt_P900/RT/image/compressedDepth/parameter_descriptions         7 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_P900/RT/image/compressedDepth/parameter_updates              8 msgs    : dynamic_reconfigure/Config           
+             /bvt_P900/RT/image/theora                                      5573 msgs    : theora_image_transport/Packet        
+             /bvt_P900/RT/image/theora/parameter_descriptions                  7 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_P900/RT/image/theora/parameter_updates                      10 msgs    : dynamic_reconfigure/Config           
+             /bvt_P900/RT/parameter                                         5524 msgs    : auv_msgs/bvtSonarOutputParam         
+             /bvt_P900/XY/image/compressed/parameter_descriptions              7 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_P900/XY/image/compressed/parameter_updates                   9 msgs    : dynamic_reconfigure/Config           
+             /bvt_P900/XY/image/compressedDepth/parameter_descriptions         7 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_P900/XY/image/compressedDepth/parameter_updates             10 msgs    : dynamic_reconfigure/Config           
+             /bvt_P900/XY/image/theora/parameter_descriptions                  7 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_P900/XY/image/theora/parameter_updates                      11 msgs    : dynamic_reconfigure/Config           
+             /bvt_P900/parameter_descriptions                                  7 msgs    : dynamic_reconfigure/ConfigDescription
+             /bvt_P900/parameter_updates                                      12 msgs    : dynamic_reconfigure/Config           
+             /compass/orientation                                          24604 msgs    : sensor_msgs/Imu                      
+             /diagnostics                                                   2410 msgs    : diagnostic_msgs/DiagnosticArray      
+             /dvl/motion                                                    9768 msgs    : nessie_msgs/TeledyneExplDvl          
+             /gps/nav_sat_fix                                              24729 msgs    : sensor_msgs/NavSatFix                
+             /gyro/orientation                                             21257 msgs    : sensor_msgs/Imu                      
+             /joint_states                                                  4131 msgs    : sensor_msgs/JointState               
+             /joy                                                          40498 msgs    : sensor_msgs/Joy                      
+             /nav/gps_from_origin                                          13742 msgs    : nav_msgs/Odometry                    
+             /nav/hydro_nav_sts                                            23038 msgs    : auv_msgs/NavSts                      
+             /nav/nav_sts                                                  21689 msgs    : auv_msgs/NavSts                      
+             /nav/odometry                                                 21363 msgs    : nav_msgs/Odometry                    
+             /pantilt/orientation                                           4131 msgs    : blueview_pantilt/PanTiltOrientation  
+             /pantilt/orientation_request                                      1 msg     : blueview_pantilt/PanTiltOrientation  
+             /pilot/position_req                                            2473 msgs    : vehicle_msgs/PilotRequest            
+             /pilot/status                                                  4943 msgs    : vehicle_msgs/PilotStatus             
+             /pressure/depth                                               12060 msgs    : geometry_msgs/PoseStamped            
+             /rosout                                                       26593 msgs    : rosgraph_msgs/Log                     (9 connections)
+             /rosout_agg                                                   26639 msgs    : rosgraph_msgs/Log                    
+             /tf                                                           71337 msgs    : tf/tfMessage                         
+             /thrusters/commands                                           24741 msgs    : vehicle_msgs/ThrusterCommand         
+             /thrusters/status                                             21126 msgs    : vehicle_msgs/ThrusterFeedback        
+             /user/forces                                                  40446 msgs    : vehicle_msgs/FloatArrayStamped       
+             /vehicle/energy/global                                         2475 msgs    : energy_monitor/EnergyGlobal          
+             /vehicle/status                                                 493 msgs    : platform_monitor/VehicleStatus

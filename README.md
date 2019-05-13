@@ -23,12 +23,27 @@ $ echo "export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$PWD/external"
 $ source ~/.zshrc
 ```
 
+## Run ROSBAG
+```
+$ rosbag play my_bag.bag
+
+```
+The bag should have a specification like in `bag_info.txt`
+
 ## Run nodes
+Run the following nodes in this order.
+
 Convert polar image to cartesian
 ```
-$ rosrun cartesian_transform cartesian_transform.py <sensor_msgs/Image topic>
+$ rosrun underwater_reconstruction cartesian_transform.py /bvt_MB2250/RT/image 80
 ```
-Convert and publish image
+
+Detect blob features and publish them
 ```
-$ rosrun cartesian_transform image_converter node
+$ rosrun underwater_reconstruction blob_detector.py /bvt_MB2250/RT/image
+```
+
+Use blob features and nav stats to create a map
+```
+$ rosrun underwater_reconstruction map_creator /bvt_MB2250/RT/image_features
 ```
